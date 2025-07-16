@@ -177,6 +177,17 @@ if("$ENV{ROS_VERSION}" STREQUAL "1")
     target_include_directories(foxglove_bridge SYSTEM PRIVATE ${catkin_INCLUDE_DIRS})
     target_link_libraries(foxglove_bridge ${catkin_LIBRARIES})
     enable_strict_compiler_warnings(foxglove_bridge)
+
+    install(DIRECTORY foxglove_bridge_base/include/foxglove_bridge/
+        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+        PATTERN "*.hpp"
+        PATTERN ".git" EXCLUDE # ou d'autres motifs à exclure
+    )
+    install(DIRECTORY ros1_foxglove_bridge/include/foxglove_bridge/
+        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+        PATTERN "*.hpp"
+        PATTERN ".git" EXCLUDE # ou d'autres motifs à exclure
+    )
   else()
     message(FATAL_ERROR "Could not find catkin")
   endif()

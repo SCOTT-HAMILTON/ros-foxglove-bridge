@@ -5,13 +5,13 @@ buildRosPackage {
 
   version = "30-06-2025";
 
-  # src = ./.;
-  src = fetchFromGitHub {
-    owner = "foxglove";
-    repo = "ros-foxglove-bridge";
-    rev = "f5c213f1cc59c5c336e9b899fbc07f7a8072c2b8";
-    sha256 = "sha256-G8+rFO5mubGfvScF/czjjnwk0Fu0eD/qnL5EsVxUBYU=";
-  };
+  src = ./.;
+  # src = fetchFromGitHub {
+  #   owner = "foxglove";
+  #   repo = "ros-foxglove-bridge";
+  #   rev = "f5c213f1cc59c5c336e9b899fbc07f7a8072c2b8";
+  #   sha256 = "sha256-G8+rFO5mubGfvScF/czjjnwk0Fu0eD/qnL5EsVxUBYU=";
+  # };
 
   buildType = "catkin";
   buildInputs = [ asio catkin nlohmann_json ros-environment websocketpp ];
