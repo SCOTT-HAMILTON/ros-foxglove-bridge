@@ -38,3 +38,6 @@ log/
 
 # Data cache
 data/
+
+# Nix
+result*
