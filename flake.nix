@@ -26,6 +26,7 @@
           overlays = [ nix-ros-overlay.overlays.default rosDistroOverlays ];
         };
       in {
+        packages.default = pkgs.rosPackages.noetic.callPackage ./package.nix { };
         devShells.default = pkgs.mkShell {
           name = "Foxbridge shell";
           packages = [
